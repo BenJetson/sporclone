@@ -14,15 +14,20 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
 <html>
     <head>
         <!-- a. -->
-        <title>Sporclone: ASDF</title>
+        <title>Sporclone: Electoral Votes</title>
         
         <!-- b. -->
         <link rel="stylesheet" href="css/style.css">
         
+        <!-- Non-gross font -->
         <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
         
         <!-- You may optionally style the table in your answers section here. -->
         <style>
+            * {
+                font-family: Roboto;
+            }
+            
             table {
                 
             }
@@ -36,7 +41,13 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
             }
             
             td {
-                
+                padding: 5px;
+                text-align: center;
+            }
+            
+            #answerDisplay span {
+                padding: 5px;
+                display: block;
             }
             
             table span {
@@ -52,20 +63,21 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
             /*********** Game configuration ***********/
             
             // c.
-            var answers = ["Sassafras", "Hickory Nut", "Pinnacle", "Coldbranch"];
+            var answers = ["California | CA", "Texas | TX", "Florida | FL", "New York | New Yourk | NY", "Illinois | IL",
+                          "Pennsylvania | PA", "Ohio | OH", "Georgia | GA", "Michigan | MI", "North Carolina | NC"];
             
             // d.
-            var time_limit = 60; // in seconds
+            var time_limit = 120; // in seconds
         </script>
         
         
         <!-- e. -->
-        
+        <script src="js/sporclone.js"></script>
     </head>
     
     
     <!-- f. -->
-    <body>
+    <body onload="setup();">
         
         <header>
             <h1>Sporclone</h1>
@@ -85,10 +97,10 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
                 </aside>
                 
                 <!-- h. -->
-                <img class="icon" src="images/icon.jpg" alt="quiz logo">
+                <img class="icon" src="img/uncle_sam.png" alt="quiz logo">
                 
                 <!-- i. -->
-                <h2>Name the highest mountains in South Carolina.</h2>
+                <h2>Name the 10 US States with the most electoral votes.</h2>
                 
             </section>
             
@@ -96,15 +108,18 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
                 
                 <div class="column">
                     <!-- j. -->
-                    <input id="start" type="button" value="PLAY GAME">
+                    <input id="start" type="button" value="PLAY GAME" onclick="start();">
                 </div>
                 
                 <div class="column">
                     <!-- k. -->
-                    <h3>Enter peak name:</h3>
+                    <h3>Enter state name/abbreviation:</h3>
                     
                     <!-- l.  -->
-                    <input id="guess" type="text">
+                    <form onsubmit="document.getElementById('guess').value = '';return false;">
+                        <!-- Added the form tag and onsubmit handler here to clear the box if you hit return. -->
+                        <input id="guess" type="text" onkeyup="check();">
+                    </form>
                 </div>
                 
                 <div class="column">
@@ -122,7 +137,7 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
             <section>
                 
                 <!-- m. -->
-                <table>
+                <table id="answerDisplay">
                     <tr>
                         <td><span id="answer0"></span></td>
                         <td><span id="answer1"></span></td>
@@ -130,6 +145,18 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
                     <tr>
                         <td><span id="answer2"></span></td>
                         <td><span id="answer3"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span id="answer4"></span></td>
+                        <td><span id="answer5"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span id="answer6"></span></td>
+                        <td><span id="answer7"></span></td>
+                    </tr>
+                    <tr>
+                        <td><span id="answer8"></span></td>
+                        <td><span id="answer9"></span></td>
                     </tr>
                 </table>
                 
@@ -140,7 +167,7 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
                 <!-- n. -->
                 <p>Quiz by Ben Godfrey</p>
                 
-                <p>Source: <a href="http://peakery.com/united-states-mountains/south-carolina/">Peakery</a></p>
+                <p>Source: <a href="http://state.1keydata.com/state-electoral-votes.php">1KeyData</a></p>
                 
             </footer>
             

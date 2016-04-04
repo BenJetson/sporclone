@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+
+<!--
+
+In this file, comments are used to identify different parts of the code by letter.
+The Sporclone Instructions file will refer to letters when describing the sequence of
+steps necessary to create a working Sporclone game. Complete the project according
+to the order of the NUMBERED instructions, not the order of the letters.
+
+DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
+
+-->
+
+<html>
+    <head>
+        <!-- a. -->
+        <title>Sporclone: Electoral Votes</title>
+        
+        <!-- b. -->
+        <link rel="stylesheet" href="css/style.css">
+        
+        <!-- Non-gross font -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+        
+        <!-- You may optionally style the table in your answers section here. -->
+        <style>
+            * {
+                font-family: Roboto;
+            }
+            
+            table {
+                
+            }
+            
+            tr {
+                
+            }
+            
+            th {
+                
+            }
+            
+            td {
+                padding: 5px;
+                text-align: center;
+            }
+            
+            #answerDisplay span {
+                padding: 5px;
+                display: block;
+            }
+            
+            table span {
+                /* applies only to span tags within table */
+                border: 1px solid #AAAAAA;
+                display: inline-block;
+                height: 20px;
+                width: 200px;
+                font-style: italic;
+            }
+            .answerTitle {
+                font-weight: bold;
+                padding: 3px;
+                border: 1px solid #aaa;
+                border-bottom: none;
+                background-color: #ddd;
+            }
+        </style>
+        
+        <script>
+            /*********** Game configuration ***********/
+            
+            // c.
+            var answers = ["Buenos Aires", "La Paz", "Sucre", "Santiago", "Bogot&aacute; | Bogotá | Bogota", 
+                           "San Jos&eacute; | San José | San Jose", "Havana", "Santo Domingo", "Quito", 
+                           "San Salvador", "Malabo", "Guatemala City | Guatemala", "Tegucigalpa", 
+                           "Mexico City | Mexico", "Managua", "Panama City | Panama", 
+                           "Asunci&oacute;n | Asunción | Asuncion", "Lima", "San Juan", "Madrid", 
+                           "Uruguay", "Montevideo", "Caracas"];
+            
+            // d.
+            var time_limit = 120; // in seconds
+        </script>
+        
+        
+        <!-- e. -->
+        <script src="js/sporclone.js"></script>
+    </head>
+    
+    
+    <!-- f. -->
+    <body onload="setup();">
+        
+        <header>
+            <h1>Sporclone</h1>
+        </header>
+        
+        <div class="frame">
+            
+            <section>
+                
+                <aside>
+                    <h3>More Games</h3>
+                    <ul>
+                        <!-- g. -->
+                        <li><a href="#">Puzzle Name</a></li>
+                        <li><a href="#">Puzzle Name</a></li>
+                    </ul>
+                </aside>
+                
+                <!-- h. -->
+                <img class="icon" src="img/sombrero_cactus.png" alt="quiz logo">
+                
+                <!-- i. -->
+                <h2>Name the capitals of the Spanish speaking countries.</h2>
+                
+            </section>
+            
+            <section>
+                
+                <div class="column">
+                    <!-- j. -->
+                    <input id="start" type="button" value="PLAY GAME" onclick="start();">
+                </div>
+                
+                <div class="column">
+                    <!-- k. -->
+                    <h3>Enter a capital:</h3>
+                    
+                    <!-- l.  -->
+                    <form onsubmit="document.getElementById('guess').value = '';return false;">
+                        <!-- Added the form tag and onsubmit handler here to clear the box if you hit return. -->
+                        <input id="guess" type="text" onkeyup="check();">
+                    </form>
+                </div>
+                
+                <div class="column">
+                    <h3>Score</h3>
+                    <span id="score"></span>
+                </div>
+                
+                <div class="column">
+                    <h3>Time</h3>
+                    <span id="time"></span>
+                </div>
+                
+            </section> 
+            
+            <section>
+                
+                <!-- m. -->
+                <table id="answerDisplay">
+                    <tr>
+                        <td><div class="answerTitle">Argentina</div><span id="answer0"></span></td>
+                        <td><div class="answerTitle">Bolivia 1</div><span id="answer1"></span></td>
+                        <td><div class="answerTitle">Bolivia 2</div><span id="answer2"></span></td>
+                        <td><div class="answerTitle">Chile</div><span id="answer3"></span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="answerTitle">Colombia</div><span id="answer4"></span></td>
+                        <td><div class="answerTitle">Costa Rica</div><span id="answer5"></span></td>
+                        <td><div class="answerTitle">Cuba</div><span id="answer6"></span></td>
+                        <td><div class="answerTitle">Dominican Republic</div><span id="answer7"></span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="answerTitle">Ecuador</div><span id="answer8"></span></td>
+                        <td><div class="answerTitle">El Salvador</div><span id="answer9"></span></td>
+                        <td><div class="answerTitle">Equatorial Guinea</div><span id="answer10"></span></td>
+                        <td><div class="answerTitle">Guatemala</div><span id="answer11"></span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="answerTitle">Honduras</div><span id="answer12"></span></td>
+                        <td><div class="answerTitle">Mexico</div><span id="answer13"></span></td>
+                        <td><div class="answerTitle">Nicaragua</div><span id="answer14"></span></td>
+                        <td><div class="answerTitle">Panama</div><span id="answer15"></span></td>
+                    </tr>
+                    <tr>
+                        <td><div class="answerTitle">Paraguay</div><span id="answer16"></span></td>
+                        <td><div class="answerTitle">Peru</div><span id="answer17"></span></td>
+                        <td><div class="answerTitle">Puerto Rico</div><span id="answer18"></span></td>
+                        <td><div class="answerTitle">Spain</div><span id="answer19"></span></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><div class="answerTitle">Uruguay</div><span id="answer20"></span></td>
+                        <td><div class="answerTitle">Venezuela</div><span id="answer21"></span></td>
+                        <td></td>
+                    </tr>
+                </table>
+                
+            </section>
+            
+            <footer>
+                
+                <!-- n. -->
+                <p>Quiz by Ben Godfrey</p>
+                
+                <p>Source: <a href="http://www.learnalanguage.com/blog/spanish-speaking-countries/">Learn A+ Language</a></p>
+                
+            </footer>
+            
+        </div>
+
+    </body>
+</html>

@@ -70,6 +70,8 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
             }
         </style>
         
+        <span id="scriptLoc"></span>
+<!--
         <script>
             /*********** Game configuration ***********/
             
@@ -79,7 +81,8 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
             // d.
             var time_limit = 120; // in seconds
         </script>
-        
+-->
+        <script src="js/ajaxhandler.js"></script>
         
         <!-- e. -->
         <script src="js/sporclone.js"></script>
@@ -87,7 +90,7 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
     
     
     <!-- f. -->
-    <body onload="setup();">
+    <body onload="ajaxGETRequest('config_zoo.txt', 'scriptLoc');setup();">
         
         <header>
             <h1>Sporclone</h1>

@@ -70,18 +70,8 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
             }
         </style>
         
-        <span id="scriptLoc"></span>
-<!--
-        <script>
-            /*********** Game configuration ***********/
-            
-            // c.
-            var answers = ["Elephant", "Flamingo", "Giraffe", "Hippo", "Otter", "Tiger", "Tortise", "Toucan"];
-            
-            // d.
-            var time_limit = 120; // in seconds
-        </script>
--->
+        <script id="gameConfig"></script>
+        
         <script src="js/ajaxhandler.js"></script>
         
         <!-- e. -->
@@ -90,7 +80,7 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
     
     
     <!-- f. -->
-    <body onload="ajaxGETRequest('config_zoo.txt', 'scriptLoc');setup();">
+    <body onload="ajaxGETRequest('config_zoo.txt', 'gameConfig');setup();">
         
         <header>
             <h1>Sporclone</h1>

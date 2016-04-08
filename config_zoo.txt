@@ -1,4 +1,4 @@
-<script>
+
             /*********** Game configuration ***********/
             
             // c.
@@ -6,4 +6,3 @@
             
             // d.
             var time_limit = 120; // in seconds
-        </script>

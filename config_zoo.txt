@@ -1,8 +1,1 @@
-
-            /*********** Game configuration ***********/
-            
-            // c.
-            var answers = ["Elephant", "Flamingo", "Giraffe", "Hippo", "Otter", "Tiger", "Tortise", "Toucan"];
-            
-            // d.
-            var time_limit = 120; // in seconds
+(["Elephant", "Flamingo", "Giraffe", "Hippo", "Otter", "Tiger", "Tortise", "Toucan"], 120)

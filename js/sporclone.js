@@ -22,8 +22,12 @@ var playing;
 /**
  * Sets initial game state. 
  */
-function setup()
+function setup(configArray)
 {
+    
+    var answers = configArray[0];
+    var time_limit = configArray[1];
+    
     correct = 0;
     total = answers.length;
 

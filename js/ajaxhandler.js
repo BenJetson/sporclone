@@ -4,8 +4,7 @@ function loadGame(file) {
     
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            document.getElementById("gameConfig").innerHTML = xhttp.responseText;
-            setup();
+            setup(xhttp.responseText);
         }
     }
     

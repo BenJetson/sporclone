@@ -17,16 +17,18 @@ var is_guessed;
 var timer;
 var time_remaining;
 var playing;
+var answers;
+var time_limit;
 
 
 /**
  * Sets initial game state. 
  */
-function setup(configArray)
+function setup(answerArray, timeAmt)
 {
     
-    var answers = configArray[0];
-    var time_limit = configArray[1];
+    answers = answerArray;
+    time_limit = timeAmt;
     
     correct = 0;
     total = answers.length;

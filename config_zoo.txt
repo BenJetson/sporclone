@@ -1,1 +1,1 @@
-(["Elephant", "Flamingo", "Giraffe", "Hippo", "Otter", "Tiger", "Tortise", "Toucan"], 120)
+Elephant*Flamingo*Giraffe*Hippo*Otter*Tiger*Tortise*Toucan*120

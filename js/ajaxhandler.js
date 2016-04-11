@@ -9,7 +9,7 @@ function loadGame(file) {
             
             var serverResponse = xhttp.responseText.split("*");
             var answerArray = serverResponse.splice(0,-1);
-            var timeAmt = Number(serverResponse[-1]);
+            var timeAmt = Number(serverResponse.splice(-1));
             
             setup(answerArray, timeAmt);
         }

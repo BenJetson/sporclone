@@ -5,6 +5,8 @@ function loadGame(file) {
     xhttp.onreadystatechange = function() {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             
+            console.log(xhttp.responseText);
+            
             var serverResponse = xhttp.responseText;
             var serverResponse = serverResponse.split("*");
             var answerArray = serverResponse.split(0,-1);

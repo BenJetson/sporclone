@@ -8,7 +8,7 @@ function loadGame(file) {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             
             var serverResponse = xhttp.responseText.split("*");
-            var answerArray = serverResponse.splice(0,-1);
+            var answerArray = serverResponse.splice(0,serverResponse.length - 1);
             var timeAmt = Number(serverResponse.splice(-1));
             
             setup(answerArray, timeAmt);

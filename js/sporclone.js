@@ -60,6 +60,8 @@ function start()
         document.getElementById('start').value = "Give Up";
         document.getElementById('start').onclick = function() { end() };
         
+        // Unhide the answer display
+        document.getElementById("answerDisplay").setAttribute("class", "unhide");
         
         // p. 
         timer = setInterval(tick, 1000);

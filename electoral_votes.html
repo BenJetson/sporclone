@@ -25,6 +25,8 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
         <!-- Favicon -->
         <link rel="icon" href="favicon.ico">
         
+        <link rel="stylesheet" href="css/animation.css">
+        
         <!-- You may optionally style the table in your answers section here. -->
         <style>
             * {
@@ -70,16 +72,7 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
             }
         </style>
         
-        <script>
-            /*********** Game configuration ***********/
-            
-            // c.
-            var answers = ["California | CA", "Texas | TX", "Florida | FL", "New York | New Yourk | NY", "Illinois | IL",
-                          "Pennsylvania | PA", "Ohio | OH", "Georgia | GA", "Michigan | MI", "North Carolina | NC"];
-            
-            // d.
-            var time_limit = 120; // in seconds
-        </script>
+        <script src="js/ajaxhandler.js"></script>
         
         
         <!-- e. -->
@@ -88,7 +81,7 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
     
     
     <!-- f. -->
-    <body onload="setup();">
+    <body onload="loadGame('config_electoral.txt');">
         
         <header>
             <h1>Sporclone</h1>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+<html>
+
+    <body>
+        
+        <script>
+            
+            window.location.href = "electoral_votes.html";
+            
+        </script>
+        
+    </body>
+
+</html>

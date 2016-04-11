@@ -25,6 +25,8 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
         <!-- Favicon -->
         <link rel="icon" href="favicon.ico">
         
+        <link rel="stylesheet" href="css/animation.css">
+        
         <!-- You may optionally style the table in your answers section here. -->
         <style>
             * {
@@ -70,15 +72,7 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
             }
         </style>
         
-        <script>
-            /*********** Game configuration ***********/
-            
-            // c.
-            var answers = ['Xenial Xerus | Xenial', 'Wily Werewolf | Wily', 'Vivid Vervet | Vivid', 'Utopic Unicorn | Utopic', 'Trusty Tahr | Trusty', 'Saucy Salamander | Saucy', 'Raring Ringtail | Raring', 'Quantal Quetzal | Quantal', 'Precise Pangolin | Precise', 'Oneiric Ocelot | Oneiric', 'Natty Narwhal | Natty', 'Maverick Meerkat | Maverick', 'Lucid Lynx | Lucid', 'Karmic Koala | Karmic', 'Jaunty Jackalope | Jaunty', 'Intrepid Ibex | Intrepid', 'Hardy Heron | Hardy', 'Gutsy Gibbon | Gutsy', 'Feisty Fawn | Feisty', 'Edgy Eft | Edgy', 'Dapper Drake | Dapper', 'Breezy Badger | Breezy', 'Hoary Hedgehog | Hoary', 'Warty Warthog | Warty'];
-            
-            // d.
-            var time_limit = 120; // in seconds
-        </script>
+        <script src="js/ajaxhandler.js"></script>
         
         
         <!-- e. -->
@@ -87,7 +81,7 @@ DO NOT DELETE THE LETTER COMMENTS AFTER YOU COMPLETE STEPS!!!!!
     
     
     <!-- f. -->
-    <body onload="setup();">
+    <body onload="loadGame('config_ubuntu.txt');">
         
         <header>
             <h1>Sporclone</h1>
